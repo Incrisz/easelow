@@ -152,16 +152,16 @@
                         @endif
                     </ul>
                 </div>
-                @if (get_setting('vendor_system_activation') == 1)
+        
                     <div class="text-center text-md-left mt-4">
                         <h4 class="fs-13 text-uppercase fw-600 border-bottom border-gray-900 pb-2 mb-4">
-                            {{ translate('Be a Seller') }}
+                            {{ translate('Confirm A Pickup Point') }}
                         </h4>
-                        <a href="{{ route('shops.create') }}" class="btn btn-primary btn-sm shadow-md">
-                            {{ translate('Apply Now') }}
+                        <a href="{{ route('pickupblog') }}" class="btn btn-primary btn-sm shadow-md">
+                            {{ translate('Pick-up Points') }}
                         </a>
                     </div>
-                @endif
+            
             </div>
         </div>
     </div>

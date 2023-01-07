@@ -604,6 +604,33 @@
                     </li>
                 @endcanany
 
+                       <!--pickupBlog System-->
+                       @canany(['view_pickupblogs','view_pickupblog_categories'])
+                    <li class="aiz-side-nav-item">
+                        <a href="#" class="aiz-side-nav-link">
+                            <i class="las la-bullhorn aiz-side-nav-icon"></i>
+                            <span class="aiz-side-nav-text">{{ translate('Pickup System') }}</span>
+                            <span class="aiz-side-nav-arrow"></span>
+                        </a>
+                        <ul class="aiz-side-nav-list level-2">
+                            @can('view_pickupblogs')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('pickupblog.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['pickupblog.create', 'pickupblog.edit'])}}">
+                                        <span class="aiz-side-nav-text">{{ translate('All Posts') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('view_pickupblog_categories')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('pickupblog-category.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['pickupblog-category.create', 'pickupblog-category.edit'])}}">
+                                        <span class="aiz-side-nav-text">{{ translate('Categories') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                        </ul>
+                    </li>
+                @endcanany
+
                 <!-- marketing -->
                 @canany(['view_all_flash_deals','send_newsletter','send_bulk_sms','view_all_subscribers','view_all_coupons'])
                     <li class="aiz-side-nav-item">

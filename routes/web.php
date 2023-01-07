@@ -5,6 +5,7 @@ use App\Http\Controllers\AizUploadController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PickupblogController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CompareController;
@@ -411,6 +412,13 @@ Route::controller(BlogController::class)->group(function () {
     Route::get('/blog', 'all_blog')->name('blog');
     Route::get('/blog/{slug}', 'blog_details')->name('blog.details');
 });
+
+//PickupBlog Section
+Route::controller(PickupblogController::class)->group(function () {
+    Route::get('/pickupblog', 'all_blog')->name('pickupblog');
+    Route::get('/pickupblog/{slug}', 'blog_details')->name('pickupblog.details');
+});
+
 
 Route::controller(PageController::class)->group(function () {
     //mobile app balnk page for webview

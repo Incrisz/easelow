@@ -5,6 +5,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AizUploadController;
 use App\Http\Controllers\AttributeController;
 use App\Http\Controllers\BlogCategoryController;
+use App\Http\Controllers\PickupblogController;
+use App\Http\Controllers\PickupblogCategoryController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\BusinessSettingsController;
@@ -356,6 +358,20 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
         Route::get('/blog/destroy/{id}', 'destroy')->name('blog.destroy');
         Route::post('/blog/change-status', 'change_status')->name('blog.change-status');
     });
+    
+
+        //pickupBlog Section
+    //pickupBlog cateory
+    Route::resource('pickupblog-category', PickupblogCategoryController::class);
+    Route::get('/pickupblog-category/destroy/{id}', [PickupblogCategoryController::class, 'destroy'])->name('blog-category.destroy');
+
+    // Blog
+    Route::resource('pickupblog', PickupblogController::class);
+    Route::controller(BlogController::class)->group(function () {
+        Route::get('/pickupblog/destroy/{id}', 'destroy')->name('pickupblog.destroy');
+        Route::post('/pickupblog/change-status', 'change_status')->name('pickupblog.change-status');
+    });
+
 
     //Coupons
     Route::resource('coupon', CouponController::class);
