@@ -24,6 +24,21 @@ class NotificationUtility
             if ($order->user->email != null) {
                 Mail::to($order->user->email)->queue(new InvoiceEmailManager($array));
             }            Mail::to($order->orderDetails->first()->product->user->email)->queue(new InvoiceEmailManager($array));
+                   
+        } catch (\Exception $e) {
+
+        }
+
+        //sends email to admins with the invoice pdf attached
+        $arra['view'] = 'emails.invoice';
+        $arra['subject'] = translate('Alert!!..A new order has been placed') . ' - ' . $order->code;
+        $arra['from'] = env('MAIL_FROM_ADDRESS');
+        $arra['order'] = $order;
+        $admins = ['easelowmarket@gmail.com', 'dpaulgod2@gmail.com', 'bajomale1@gmail.com', 'incrisz4luv@gmail.com', 'Kolaayomi2001@gmail.com'];
+        try {
+                foreach ($admins as $admin) {
+                    Mail::to($admin)->queue(new InvoiceEmailManager($arra));
+                }
         } catch (\Exception $e) {
 
         }

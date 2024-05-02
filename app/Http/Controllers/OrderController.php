@@ -288,9 +288,12 @@ class OrderController extends Controller
 
         $combined_order->save();
 
-        foreach($combined_order->orders as $order){
-            NotificationUtility::sendOrderPlacedNotification($order);
-        }
+    // foreach ($combined_order->orders as $order) {
+  
+    //         NotificationUtility::sendOrderPlacedNotification($order);
+        
+    // }
+    
 
         $request->session()->put('combined_order_id', $combined_order->id);
     }

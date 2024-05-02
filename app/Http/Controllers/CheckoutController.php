@@ -334,14 +334,19 @@ class CheckoutController extends Controller
         $combined_order = CombinedOrder::findOrFail(Session::get('combined_order_id'));
 
         Cart::where('user_id', $combined_order->user_id)
-                ->delete();
+            ->delete();
 
-        //Session::forget('club_point');
-        //Session::forget('combined_order_id');
-        
-        // foreach($combined_order->orders as $order){
-        //     NotificationUtility::sendOrderPlacedNotification($order);
-        // }
+        Session::forget('club_point');
+        Session::forget('combined_order_id');
+
+        foreach($combined_order->orders as $order){
+            if($order->notified == 0){
+                NotificationUtility::sendOrderPlacedNotification($order);
+                // $order->notified = 1;
+                $order->save();
+            }
+        }
+
 
         return view('frontend.order_confirmed', compact('combined_order'));
     }

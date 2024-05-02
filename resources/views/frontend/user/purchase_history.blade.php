@@ -20,6 +20,7 @@
                 <tbody class="fs-14">
                     @foreach ($orders as $key => $order)
                         @if (count($order->orderDetails) > 0)
+                        @if ($order->payment_status == 'paid')
                             <tr>
                                 <!-- Code -->
                                 <td class="pl-0">
@@ -78,6 +79,7 @@
                                     </a>
                                 </td>
                             </tr>
+                        @endif
                         @endif
                     @endforeach
                 </tbody>

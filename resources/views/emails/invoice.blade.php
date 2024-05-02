@@ -119,7 +119,9 @@
 	                    <th width="15%">{{ translate('Unit Price') }}</th>
 	                    <th width="10%">{{ translate('Tax') }}</th>
 	                    <th width="15%" class="text-right">{{ translate('Total') }}</th>
-	                </tr>
+
+	                    <th width="15%" class="text-right">{{ translate('Payment_Status') }}</th>
+					</tr>
 				</thead>
 				<tbody class="strong">
 	                @foreach ($order->orderDetails as $key => $orderDetail)
@@ -139,6 +141,9 @@
 								<td class="gry-color currency">{{ single_price($orderDetail->price/$orderDetail->quantity) }}</td>
 								<td class="gry-color currency">{{ single_price($orderDetail->tax/$orderDetail->quantity) }}</td>
 			                    <td class="text-right currency">{{ single_price($orderDetail->price+$orderDetail->tax) }}</td>
+			                    <td class="text-right currency">{{ single_price($order->payment_status) }}</td>
+
+								
 							</tr>
 		                @endif
 					@endforeach
