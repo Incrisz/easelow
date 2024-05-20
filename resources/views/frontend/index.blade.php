@@ -625,6 +625,34 @@
         </section>
     @endif
 
+    <!-- footer Description -->
+
+    <section class="bg-light border-top border-bottom mt-auto">
+        <div class="container py-4">
+            <h1 class="fs-18 fw-700 text-gray-dark mb-3">Easelow eCommerce | AN ONLINE SHOPPING PLATFORM WITH GREAT DEALS</h1>
+            <p class="fs-13 text-gray-dark text-justify mb-0">
+                            Easelow is a p2p E-commerce platform for students. We help connect buyers
+                                            and sellers in institutions across the globe through our platform. With our app,
+                                            students can now buy and sell used/brand new products, and find businesses listed
+                                            around institutions.<br>
+                <br>
+                <br>
+                Easelow aims to create a campus E-commerce network, to help students find items
+                they need quickly, affordable and, stress free.<br>
+
+
+                We are working tirelessly to improve the distribution challenges experienced in
+                E-commerce ensuring our users get their needed products and services just how
+                they want it.<br>
+                <br>
+                Not a student? No problems!<br>
+                Easelow is also keen on helping individuals who are
+                not students find cheap and affordable products around their location. Just sign up!<br>And the rest is history.
+                <br>
+                            </p>
+                        </div>
+    </section>
+
 @endsection
 
 @section('script')
