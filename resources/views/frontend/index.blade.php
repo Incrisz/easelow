@@ -629,7 +629,7 @@
 
     <section class="bg-light border-top border-bottom mt-auto">
         <div class="container py-4">
-            <h1 class="fs-18 fw-700 text-gray-dark mb-3">Easelow eCommerce | AN ONLINE SHOPPING PLATFORM WITH GREAT DEALS</h1>
+            <h1 class="fs-18 fw-700 text-gray-dark mb-3">Easelow E-commerce | AN ONLINE SHOPPING PLATFORM WITH GREAT DEALS</h1>
             <p class="fs-13 text-gray-dark text-justify mb-0">
                             Easelow is a p2p E-commerce platform for students. We help connect buyers
                                             and sellers in institutions across the globe through our platform. With our app,
@@ -647,8 +647,9 @@
                 <br>
                 Not a student? No problems!<br>
                 Easelow is also keen on helping individuals who are
-                not students find cheap and affordable products around their location. Just sign up!<br>And the rest is history.
+                not students find cheap and affordable products around their location. Just sign up! And the rest is history.<br>
                 <br>
+                Welcome to Easelowmarket, where convenience, affordability and camaraderie converge to redefine your student experience. Start exploring now and make your student years unforgettable.    ... <br> <br>EASELOW - The Student Market. 
                             </p>
                         </div>
     </section>
